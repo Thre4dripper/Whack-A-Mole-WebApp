@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .mole-div {
+    @apply flex justify-center items-end overflow-hidden h-40;
+  }
+
+  .dirt {
+    @apply absolute h-8;
+  }
+
+  .mole {
+    @apply relative transition-all ease-in-out duration-200 top-full;
+  }
+
+  .up{
+    @apply -top-5;
+  }
+}
