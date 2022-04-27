@@ -59,9 +59,24 @@ const peep = () => {
 const hit = (e) => {
   score++;
   updateScore();
+  showHammerDiv($(e.target).parent().children(".hammer-div"));
   $(e.target).removeClass("up");
   $(e.target).css("pointer-events", "none");
 };
+
+const showHammerDiv = (hammerDiv) => {
+  $(hammerDiv).show();
+  $(hammerDiv).children(".hammer").addClass("-rotate-45");
+  setTimeout(() => {
+    $(hammerDiv).children(".hammer").removeClass("-rotate-45");
+    hideHammerDiv();
+  }, 200);
+};
+
+const hideHammerDiv = () => {
+  $(".hammer-div").hide();
+};
+hideHammerDiv();
 
 const updateScore = () => {
   $("#score").text("Score: " + score);

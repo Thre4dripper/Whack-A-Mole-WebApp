@@ -6,7 +6,7 @@
 
 @layer components {
   .mole-div {
-    @apply flex justify-center items-end overflow-hidden h-40;
+    @apply flex flex-col justify-end items-center overflow-hidden h-40;
   }
 
   .dirt {
@@ -19,5 +19,9 @@
 
   .up{
     @apply -top-5;
+  }
+
+  .hammer {
+    @apply w-16 origin-bottom-right transition-all duration-200 ease-in-out;
   }
 }
