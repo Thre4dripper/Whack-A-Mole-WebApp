@@ -48,6 +48,7 @@ const peep = () => {
   const time = randomTime();
   const hole = randomHole();
   moles[hole].addClass("up");
+  moles[hole].css("pointer-events", "auto");
   setTimeout(() => {
     moles[hole].removeClass("up");
     if (!timeUp) peep();
@@ -55,10 +56,11 @@ const peep = () => {
   }, time);
 };
 
-const hit = () => {
+const hit = (e) => {
   score++;
   updateScore();
-  $(this).removeClass("up");
+  $(e.target).removeClass("up");
+  $(e.target).css("pointer-events", "none");
 };
 
 const updateScore = () => {
